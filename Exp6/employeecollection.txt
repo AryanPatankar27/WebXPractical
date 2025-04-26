@@ -1,0 +1,6 @@
+1. Switch to the company database:
+use company
+
+2. Display all employee documents from the employees collection:
+
+db.employees.find().pretty()
