@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Analytics Integration</title>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-MEASUREMENT_ID');
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Google Analytics Integration</h1>
+    </header>
+    
+    <main>
+        <p>This page has Google Analytics tracking enabled.</p>
+        <button id="trackButton">Track Event</button>
+    </main>
+    
+    <script>
+        document.getElementById('trackButton').addEventListener('click', function() {
+            gtag('event', 'button_click', {
+                'event_category': 'engagement',
+                'event_label': 'custom_event'
+            });
+            alert('Event tracked!');
+        });
+    </script>
+</body>
+</html> 
